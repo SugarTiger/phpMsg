@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2017-12-28 19:08:33
+Date: 2017-12-28 19:35:32
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -31,3 +31,5 @@ CREATE TABLE `chat_log` (
 -- ----------------------------
 -- Records of chat_log
 -- ----------------------------
+INSERT INTO `chat_log` VALUES ('1001', 'admin', 'user', '11111', '0');
+INSERT INTO `chat_log` VALUES ('1002', 'admin', 'user', '在吗？', '0');

@@ -17,8 +17,9 @@
     </style>
 </head>
 <body>
+    <iframe src="./fromClient.php" width="0" height="0" frameborder="0"></iframe>
     <h1>客服端口</h1>
-        <textarea  id="views"></textarea>
+        <div  id="views"></div>
         <textarea rows="10" cols="70" id="input"></textarea>
     <script src="./jquery-3.2.1.min.js"></script>
     <script>
@@ -29,7 +30,12 @@
         },function(res){
             $('#views').append("你说："+res);
         })
-    })
+    });
+    function showMsg(str){
+        alert(str.content);
+        console.log(str);
+        $('#views').append("<p>客户说："+str.content+"</p>");
+    }
     </script>
 </body>
 </html>
