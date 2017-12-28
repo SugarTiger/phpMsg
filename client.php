@@ -14,11 +14,18 @@
         padding: 10px;
         margin-bottom: 10px;
     }
+    .serverMsg span{
+        color:yellow;
+    }
+    .userMsg span{
+        color:blue;
+    }
     </style>
 </head>
 <body>
+    <iframe src="./fromServer.php" width="0" height="0" frameborder="0"></iframe>
     <h1>用户端口</h1>
-        <textarea  id="views"></textarea>
+        <div id="views"></div>
         <textarea rows="10" cols="70" id="input"></textarea>
     <script src="./jquery-3.2.1.min.js"></script>
     <script>
@@ -27,9 +34,14 @@
         $.post('toServer.php',{
             msg:$(this).val()
         },function(res){
-            $('#views').append("你说："+res);
+            $('#views').append("<p class='userMsg'><span>你说：</span>"+res+"</p>");
         })
+        $(this).val('');
     })
+    function showMsg(str){
+        console.log(str);
+        $('#views').append("<p class='serverMsg'><span>客服说：</span>"+str.content+"</p>");
+    }
     </script>
 </body>
 </html>

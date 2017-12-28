@@ -15,7 +15,7 @@
             mysqli_query($conn, $sql);
             ob_flush();
             flush();
-            sleep(1);
+            sleep(3);
         }
         
         mysqli_free_result($res);

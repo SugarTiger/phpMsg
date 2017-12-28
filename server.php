@@ -14,6 +14,12 @@
         padding: 10px;
         margin-bottom: 10px;
     }
+    .userMsg span{
+        color:yellow;
+    }
+    .serverMsg span{
+        color:blue;
+    }
     </style>
 </head>
 <body>
@@ -28,13 +34,13 @@
         $.post('toClient.php',{
             msg:$(this).val()
         },function(res){
-            $('#views').append("你说："+res);
+            $('#views').append("<p class='serverMsg'><span>你说：</span>"+res+"</p>");
         })
+        $(this).val('');
     });
     function showMsg(str){
-        alert(str.content);
         console.log(str);
-        $('#views').append("<p>客户说："+str.content+"</p>");
+        $('#views').append("<p class='userMsg'><span>用户说：</span>"+str.content+"</p>");
     }
     </script>
 </body>
